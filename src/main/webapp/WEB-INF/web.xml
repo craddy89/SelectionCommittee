@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         id="WebApp_ID" version="4.0">
+  <display-name>Admissions Committee</display-name>
+  <welcome-file-list>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>Committee</servlet-name>
+    <servlet-class>controller.Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Committee</servlet-name>
+    <url-pattern>/Committee</url-pattern>
+  </servlet-mapping>
+
+
+  <!--    <servlet>-->
+  <!--        <servlet-name>Registration</servlet-name>-->
+  <!--        <jsp-file>/jsp/registration.jsp</jsp-file>-->
+  <!--    </servlet>-->
+
+  <!--    <servlet-mapping>-->
+  <!--        <servlet-name>Registration</servlet-name>-->
+  <!--        <url-pattern>/registration</url-pattern>-->
+  <!--    </servlet-mapping>-->
+
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>localization</param-value>
+  </context-param>
+
+  <!--    <context-param>-->
+  <!--        <param-name>locales</param-name>-->
+  <!--        <param-value>ru en</param-value>-->
+  <!--    </context-param>-->
+
+  <filter>
+    <filter-name>EnrollmentStateFilter</filter-name>
+    <filter-class>filter.EnrollmentStateFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>EnrollmentStateFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <!--    <filter>-->
+  <!--        <filter-name>UnauthorizedUserFilter</filter-name>-->
+  <!--        <filter-class>by.epam.learning.yevtukhovich.admissionsCommittee.filter.UnauthorizedUserFilter</filter-class>-->
+  <!--        <init-param>-->
+  <!--            <param-name>unauthorizedCommands</param-name>-->
+  <!--            <param-value>main_page login no_command view_faculties view_faculty registration view_applicants-->
+  <!--                view_enrollments error-->
+  <!--            </param-value>-->
+  <!--        </init-param>-->
+  <!--    </filter>-->
+
+  <!--    <filter-mapping>-->
+  <!--        <filter-name>UnauthorizedUserFilter</filter-name>-->
+  <!--        <url-pattern>/*</url-pattern>-->
+  <!--    </filter-mapping>-->
+
+  <filter>
+    <filter-name>AdminFilter</filter-name>
+    <filter-class>filter.commandAccessFilter.AdminCommandFilter</filter-class>
+    <init-param>
+      <param-name>adminCommands</param-name>
+      <param-value>open_enrollment close_enrollment view_subjects add_subject delete_subject add_faculty delete_faculty</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AdminFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>ApplicantFilter</filter-name>
+    <filter-class>filter.commandAccessFilter.ApplicantCommandFilter</filter-class>
+    <init-param>
+      <param-name>applicantCommands</param-name>
+      <param-value>apply cancel_application</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ApplicantFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>ResourceFolderFilter</filter-name>
+    <filter-class>filter.ResourceFolderFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>ResourceFolderFilter</filter-name>
+    <url-pattern>/jsp/*</url-pattern>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>
+      listener.ContextListener
+    </listener-class>
+  </listener>
+
+  <error-page>
+    <location>/jsp/error.jsp</location>
+  </error-page>
+
+</web-app>

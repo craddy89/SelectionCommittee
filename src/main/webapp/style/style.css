@@ -1,0 +1,197 @@
+.submitButton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#content ol {
+    margin-left: 25%;
+}
+
+#infoMessage {
+    text-align: center;
+}
+
+.personalData {
+    margin: 5px 5px 5px 0px;
+}
+
+
+.controlPanel {
+    margin-left: 20%;
+}
+
+#banner {
+    background: transparent url(banner.png) no-repeat;
+    background-size: 100%;
+    width: 870px;
+    height: 180px;
+    border: 5px solid #DDD;
+}
+
+a:hover img {
+    cursor: pointer;
+}
+
+.locale {
+    overflow: hidden;
+    margin-left: 7px;
+    width: 25px;
+    height: 20px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+#regForm {
+    margin-left: 40%;
+}
+
+.register_field {
+    min-height: 25px;
+    margin: 10px 10px 10px 0px;
+}
+
+#side_menu {
+    width: 25%;
+    float: left;
+    padding: 15px 0px 0px 0px;
+    min-height: 35%;
+
+}
+
+#side_menu ul {
+    padding: 10px 0px 0px 20px;
+
+}
+
+#site_content {
+    width: 880px;
+    margin: 15px auto 0 auto;
+    /*height: 60%;*/
+    min-height: calc(100vh - 245px);
+}
+
+#content h1 {
+    margin: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+#content h3 {
+    margin: 5px 0px 15px 0px;
+    /*text-align: center;*/
+}
+
+#register_massage {
+    text-align: right;
+    color: #B48A7C;
+    padding: 0 15px 0 0;
+}
+
+#footer {
+    position: relative;
+    width: 100%;
+    font-family: 'trebuchet ms', sans-serif;
+    font-size: 80%;
+    height: 70px;
+    max-height: 70px;
+    text-align: center;
+    background: #696969;
+    color: #FFF;
+    float: left;
+}
+
+#footer p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*p {*/
+/*    display: block;*/
+/*    margin-block-start: 1em;*/
+/*    margin-block-end: 1em;*/
+/*    margin-inline-start: 0px;*/
+/*    margin-inline-end: 0px;*/
+/*}*/
+
+
+#header {
+    /*height: 140px;*/
+    background: #000000;
+
+}
+
+#logo {
+    width: 880px;
+    position: relative;
+
+    height: 145px;
+    background: #1d1d1d;
+}
+
+#logo, #main {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#logo h1 {
+    color: #FFFFFF;
+    padding: 50px 0 0 0;
+    letter-spacing: 0.02em;
+}
+
+#logo h1 {
+    margin: 0 0 0 9px;
+    font: normal 250% 'century gothic', arial, sans-serif;
+}
+
+#logo h2 {
+    margin: 0 0 0 10px;
+    font: normal 100% 'century gothic', Arial, sans-serif;
+    font-weight: 100;
+}
+
+#logo_text h2 {
+
+    font-size: 110%;
+    padding: 0 0 0 3px;
+    color: #B48A7C;
+
+}
+
+/*#content table {*/
+/*    margin: auto auto 30px auto;*/
+/*    !*border-color: darkcyan;*!*/
+/*    border-collapse: collapse;*/
+/*    border: 1px solid black;*/
+/*}*/
+
+/*#content table td, th {*/
+/*    padding: 1px 5px 1px 5px;*/
+/*    border: 1px solid black;*/
+/*}*/
+
+#content {
+    width: 75%;
+    float: right;
+    margin-bottom: 50px;
+    /*margin-right: 20%;*/
+}
+
+/*table tr th, table tr td{*/
+/*    background: transparent;*/
+/*    color: #FFF;*/
+/*    padding: 7px 4px;*/
+/*    text-align: left;*/
+/*}*/
+
+/*table tr td{*/
+/*    background: transparent;*/
+/*    color: #47433F;*/
+
+/*}*/

@@ -1,0 +1,29 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<html>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+
+<c:set var="currentContext" scope="session"
+       value="${pageContext.servletContext.contextPath}"/>
+
+<c:if test="${not empty param.language}">
+    <c:set var="language"
+           value="${param.language}"
+           scope="session"/>
+</c:if>
+<fmt:setLocale value="${language}"/>
+
+<head>
+    <title><fmt:message key="admissions_committee"/></title>
+    <link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script>$(document).ready(function () {
+        $('#myTable').dataTable();
+    });</script>
+</head>
